@@ -1,0 +1,17 @@
+public static class CollatzConjecture
+{
+    public static int Steps(int number)
+    {
+        ArgumentOutOfRangeException.ThrowIfLessThan(number, 1);
+        int steps = 0;
+        while (number != 1)
+        {
+            if (int.IsEvenInteger(number))
+                number /= 2;
+            else
+                number = number * 3 + 1;
+            steps++;
+        }
+        return steps;
+    }
+}
